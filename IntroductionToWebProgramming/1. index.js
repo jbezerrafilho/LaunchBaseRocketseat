@@ -1,4 +1,7 @@
 // criar um cálculo de méia
+// Podemos criar varáveis de três maneiras:
+// const (variável valor constante), var (escopo global) e let (escopo local, não pode ser definida)
+//diferenças: 
 
 const aluno = 'José'
 const aluno02 = 'Júlio'
