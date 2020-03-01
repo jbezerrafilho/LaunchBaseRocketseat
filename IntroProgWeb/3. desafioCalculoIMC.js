@@ -1,5 +1,5 @@
 const nome = "José"
-const peso = 90
+const peso = 70
 const altura = 1.69
 
 let message = ""

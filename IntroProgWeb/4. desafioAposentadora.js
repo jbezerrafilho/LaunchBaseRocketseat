@@ -1,25 +1,25 @@
-const nome = 'Júlia'
-const sexo = 'F'
-const idade = 62
-const contribuicao = 22
+const name = 'Júlia'
+const gender = 'F'
+const age = 62
+const due = 22
 
-let regra = idade + contribuicao
+let rule = age + due
 let message = ""
 
-if (sexo === 'F') {
-    if (regra >= 85) {
+if (gender === 'F') {
+    if (rule >= 85) {
         message  = 'você pode se aposentar!'
     } else {
-        let faltacontribuicao = 85 - regra
-        message = `você ainda não pode se aposentar, precisa contribuir por mais ${faltacontribuicao} anos.`
+        let debt = 85 - rule
+        message = `você ainda não pode se aposentar, precisa contribuir por mais ${debt} anos.`
     }
-} else if (regra >= 95 ){
+} else if (rule >= 95 ){
     message = 'você pode se aposentar'
 } else {
-    let faltacontribuicao = 95 - regra
-    message = `você ainda não pode se aposentar, precisa contribuir por mais ${faltacontribuicao} anos`
+    let debt = 95 - rule
+    message = `você ainda não pode se aposentar, precisa contribuir por mais ${debt} anos`
 }
 
-console.log(`${nome},`, message)
+console.log(`${name},`, message)
 
 

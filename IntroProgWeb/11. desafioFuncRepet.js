@@ -4,9 +4,9 @@ const usuarios = [
     {nome: 'Tuane', tecnologias: ['HTML', 'Node.js']}
 ]
 
-function mostraTecnologia(a) {
-    for (let i = 0; i < a.length; i++) {
-      console.log(`${a[i].nome} trabalha com ${a[i].tecnologias.join(', ')}`)
+function mostraTecnologia(usuarios) {
+    for (let i = 0; i < usuarios.length; i++) {
+      console.log(`${usuarios[i].nome} trabalha com ${usuarios[i].tecnologias.join(', ')}`)
     }
 }
 
