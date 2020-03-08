@@ -3,6 +3,7 @@
 /* Variáveis CSS  */
 :root {
     --color-green: #50fa7b;
+    --color-rocket: #7159c1;
 }
 
 * {  /* De tudo que tem no html padrão, zere as configs do navegador */
@@ -80,4 +81,41 @@ header {
 
 }
 
+/* Estilizando CARDS */
 
+.cards {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px; /* espaço entre os elementos do grid */
+}
+
+.card {
+    background-color: var(--color-rocket);
+}
+
+/* .card_image-container {
+    width: 400px; exemplo de como a Tag 'filho' herda config do 'pai'.
+} */ 
+
+.card_image-container img {
+    width: 100%;
+}
+
+.card-content , .card-info{
+    padding: 24px;
+}
+
+.card-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-price {
+    background-color: var(--color-rocket); /* cor da RocketSeat */
+    filter:brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
