@@ -7,16 +7,16 @@
 {% block content %}
 
         <div id="wrapper">
-            <img src="https://avatars0.githubusercontent.com/u/50915483?s=400&u=2d7236627e92a1d812f0309737137f36291e7d08&v=4" alt="José Bezerra">
-            <h1>José Bezerra</h1>
-            <h2>Aluno - LaunchBase</h2>
-            <p>Aprendiz de programação full-stack das principais tecnologias do mercado pela <a href="https://rocketseat.com.br" target="blank">Rocketseat</a></p>
+            <img src="{{about.avatar_url}}" alt="Imagem de {{about.name}}">
+            <h1>{{about.name}}</h1>
+            <h2>{{about.role}}</h2>
+            <p>{{about.description}}</p>
         </div>
         
         <div id="footer" class="links">
-            <a href="https://github.com/josebezerrafilho" target="blank">Github</a>
-            <a href="https://www.linkedin.com/in/josbezfi/" target="blank">Linkedin</a>
-            <a href="https://twitter.com/jailheminau" target="blank">Twitter</a>
+            {% for link in about.links %}
+            <a href="{{link.url}}" target="blank">{{link.name}}</a>
+            {% endfor %}
         </div> 
 
 {% endblock %}

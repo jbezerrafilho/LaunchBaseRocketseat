@@ -16,7 +16,9 @@ server.use(express.static('public'))
 //configurando o motor View como Numjucks - 'njk'
 server.set('view engine', 'njk')
 nunjucks.configure('views', {
-  express: server
+  express: server,
+  autoescape: false,
+  noCache: true //usado apenas para desenvolvimento
 })
 
 server.listen(5000, function () { 
@@ -25,8 +27,23 @@ server.listen(5000, function () {
 
 server.get('/', function (req, res) {
   // return res.send('Hello World New!')
-  return res.render("about")
+  const about = {
+    avatar_url: 'https://avatars0.githubusercontent.com/u/50915483?s=400&u=2d7236627e92a1d812f0309737137f36291e7d08&v=4',
+    name: 'José Bezerra',
+    role: 'Aluno - LaunchBase',
+    description: 'Aprendiz de programação full-stack das principais tecnologias do mercado pela <a href="https://rocketseat.com.br" target="blank">Rocketseat</a>.',
+    links: [
+        {name: 'github', url: 'https://github.com/josebezerrafilho'},
+        {name: 'linkedin', url: 'https://www.linkedin.com/in/josbezfi/'},
+        {name: 'twitter', url: 'https://twitter.com/jailheminau'}
+    ]
+  }
+
+
+  return res.render("about", {about}) // não preciso usar chaves, pois 
+  // o nome da variável é igual a chave.
 })
+
 server.get('/portfolio', function (req, res) {
   return res.render("portfolio", { itens: videos})
 })
