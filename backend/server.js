@@ -48,6 +48,18 @@ server.get('/portfolio', function (req, res) {
   return res.render("portfolio", { itens: videos})
 })
 
+server.get('/video' , function(req, res){
+  const id = req.query.id
+  const video = videos.find(function(video){
+    return video.id == id
+  })
+  if (!video) {
+    return res.send('Video not found!')
+  }
+  return res.render('video', {item: video})
+})
+
+
 server.use(function(req, res) {
   res.status(404).render('not-found')
 })
