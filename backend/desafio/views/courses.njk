@@ -6,61 +6,27 @@
   </div>
 
   <section id="section" class="cards">
-
-    <div id="starter" class="card">
-
-      <div class="card_image-container">
-        <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="logo Starter">
-      </div>
-
-      <!-- <div class="card-content">
-        <p>Starter</p>
-      </div> -->
-
-      <div class="card-info">
-        <p>5 módulos</p>
-        <p class="card-price">Free</p>
-      </div>
-
-    </div>
-
-    <div id="launchbase" class="card">
+    
+    {% for course in courses %}
+    <div id="{{course.id}}" class="card">
 
       <div class="card_image-container">
-        <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="logo Launchbase">
+        <img src="https://skylab.rocketseat.com.br/static/{{course.logo}}" alt="logo Starter">
+        {% if course.featured %}
+          <div class="featured">Featured</div>
+        {% endif %}
       </div>
-
-      <!-- <div class="card-content">
-        <p>Launchbase</p>
-      </div> -->
-
+        
       <div class="card-info">
-        <p>10 módulos</p>
-        <p class="card-price">$XXX</p>
+        
+        <p>{{course.duration}}</p>
+        <p class="card-price">{{course.price}}</p>
       </div>
 
     </div>
-
-    <div id="gostack" class="card">
-
-      <div class="card_imagem-container">
-        <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="logo GoStack">
-      </div>
-
-
-      <!-- <div class="card-content">
-        <p>GoStack</p>
-      </div> -->
-
-      <div class="card-info">
-        <p>25 módulos</p>
-        <p class="card-price">$XXX</p>
-      </div>
-
-    </div>
-
-
+    {% endfor %}
   </section>
+    
 
   <section id="footer" class="footer">
 
@@ -72,9 +38,9 @@
 
     <a href="http://youtube.com/rocketseat" target="_blank" rel="noopener noreferrer">Youtube</a>
 
-  </section> -->
+  </section> 
 
-  <div class="modal-overlay">
+  {# <div class="modal-overlay">
     <div class="modal">
       <a class="close-modal">
         <i class="material-icons">close</i>
@@ -89,7 +55,7 @@
         <iframe src="" frameborder="0"></iframe>
       </div>
     </div>
-  </div>
+  </div> #}
 
   <script src="/script.js"></script>
 

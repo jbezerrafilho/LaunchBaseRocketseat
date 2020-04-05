@@ -115,7 +115,8 @@ header div a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
-  padding-top: 30px;  
+  padding-top: 30px; 
+  cursor: pointer; 
 }
 .card {
   background-color: rgba(0, 0, 0, 0.5);
@@ -123,6 +124,8 @@ header div a:hover {
   align-items: center;
   text-align: center;
   border-radius: 5%;
+  display: grid;
+  position: relative;
 }
 
 .card-info {
@@ -131,14 +134,17 @@ header div a:hover {
   padding-top: 80px;
   padding-bottom: 20px;
   margin: 10px;
+  align-items: center;
+  color: #FFF;
 }
 
 .card-price {
   background-color: #7159c1;
   filter: brightness(90%);
-  padding: 5px 20px;
+  padding: 5px;
   border-radius: 20px;
   text-align: center;
+  color: #FFF;
 }
 
 /* Estilizando Modal */
@@ -217,3 +223,18 @@ iframe {
   margin: 10% auto;
   /* position: absolute; */
 }
+
+/* ==== Featured ==== */
+
+.featured {
+  position: absolute;
+  background: #f7d05f;
+  color: #111;
+  /* font-size: 12px; */
+  padding: 2px 10px;
+  border-radius: 12px;
+  top: 200px;
+  right: 90px;
+
+}
+

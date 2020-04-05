@@ -5,6 +5,7 @@
 
 const express = require('express')
 const nunjucks = require('nunjucks')
+const courses = require('./data-courses')
 
 const server = express()
 
@@ -15,9 +16,11 @@ server.use(express.static('public')) // 7. definindo pasta
 // que será monitorada pelo servidor.
 
 nunjucks.configure('views', {
-  express: server
+  express: server,
+  noCache: true
 }) //6. Definimos o servidor e a variável
-// que configurada com o view engine
+// que configurada com o view engine e desativamos 
+//o cache
 
 
 server.listen(3333, function() {
@@ -29,6 +32,22 @@ server.get('/', function(req, res){
 })
 
 server.get('/courses', function(req, res){
-  return res.render('courses')
+  
+  return res.render('courses', {courses})
 })
+
+server.get("/courses/:id", function(req, res) {
+  const id = req.params.id;
+  
+  const course = courses.find(function(course){
+    return course.id == id
+  })
+  if (!course) {
+    return res.send('Course not found!')
+  }
+  return res.render('course', {course})
+  
+});
+
+
 
